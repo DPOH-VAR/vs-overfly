@@ -31,6 +31,9 @@ class OverflyRace {
         points.remove index
     }
 
+    int getSize(){
+        return points.size();
+    }
 
 
 

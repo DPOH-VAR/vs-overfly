@@ -1,4 +1,5 @@
-import org.bukkit.Location;
+import org.bukkit.Location
+import org.bukkit.entity.Entity;
 
 class OverflyPoint {
 
@@ -18,5 +19,13 @@ class OverflyPoint {
         this.location.clone()
     }
 
+    boolean isCase(Location loc){
+        if (location.world != loc.world) return false;
+        return location.distanceSquared(loc) <= size*size/4
+    }
+
+    boolean isCase(Entity entity){
+        return isCase(entity.location)
+    }
 
 }
